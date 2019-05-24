@@ -48,12 +48,12 @@ void q_A::print_queue() {
 	elem *temp = get_b();
 	int *och = new int[get_k()];
 	int l = get_k() - 1;
-	for (int i = 0; i < get_k(); ++i) {		//	<---??
-		och[l--] = temp->Val;				//	<---??
+	for (int i = 0; i < get_k(); ++i) {
+		och[l--] = temp->Val;
 		temp = temp->Prev;
 	}
-	for (int i = 0; i < get_k(); ++i) {		//	<---??
-		i != get_k() - 1 ? cout << och[i] << " << " : cout << och[i] << endl;	//	<---??
+	for (int i = 0; i < get_k(); ++i) {
+		i != get_k() - 1 ? cout << och[i] << " << " : cout << och[i] << endl;
 	}
 	delete[] och;
 }
@@ -63,12 +63,12 @@ void q_A::copy_queue(q_A &op1) {
 	elem *temp = b;
 	int *och = new int[k];
 	int l = k - 1;
-	for (int i = 0; i < k; ++i) {		//	<---??
-		och[l--] = temp->Val;			//	<---??
+	for (int i = 0; i < k; ++i) {
+		och[l--] = temp->Val;
 		temp = temp->Prev;
 	}
 	for (l = 0; l < k; l++)
-			op1.add(och[l]);			//	<---??
+			op1.add(och[l]);
 	delete[] och;
 }
 
