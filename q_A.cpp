@@ -53,7 +53,7 @@ void q_A::print_queue() {
 		temp = temp->Prev;
 	}
 	for (int i = 0; i < get_k(); ++i) {
-		i != get_k() - 1 ? cout << och[i] << " << " : cout << och[i] << endl;
+		i != get_k() - 1 ? cout << "[" <<och[i] << "], " : cout << och[i] << "]\n";
 	}
 	delete[] och;
 }

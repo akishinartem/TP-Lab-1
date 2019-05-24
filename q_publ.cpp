@@ -12,7 +12,7 @@ void q_publ::calc() {
 		temp = temp->Prev;
 	}
 	sum = sum_A / get_k();
-	cout << "Srednee arifmetich = " << sum << endl;
+	cout << "Среднее арифметическое = [" << sum << "]\n";
 }
 
 elem* q_publ::get_a() {
@@ -93,7 +93,7 @@ void q_publ::print_queue() {
 	}
 	for (int i = 0; i < get_k(); ++i)
 	{
-		i != get_k() - 1 ? cout << mas[i] << " << " : cout << mas[i] << endl;
+		i != get_k() - 1 ? cout << "[" <<mas[i] << "], " : cout << mas[i] << "]\n";
 	}
 	delete[]  mas;
 }
