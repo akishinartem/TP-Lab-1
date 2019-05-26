@@ -12,7 +12,7 @@ void q_priv::calc() {
 		temp = temp->Prev;
 	}
 	sum = sum_A / get_k();
-	cout << "Ñğåäíåå àğèôìåòè÷åñêîå = [" << sum << "]\n";
+	cout << "Ğ¡Ñ€ĞµĞ´Ğ½ĞµĞµ Ğ°Ñ€Ğ¸Ñ„Ğ¼ĞµÑ‚Ğ¸Ñ‡ĞµÑĞºĞ¾Ğµ = [" << sum << "]\n";
 }
 
 elem* q_priv::get_a() {
