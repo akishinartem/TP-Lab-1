@@ -1,3 +1,5 @@
+//	Akishin Artem	//	1741	//
+
 #include <iostream>
 #include <conio.h>
 #include <windows.h>
