@@ -1,4 +1,4 @@
-//	Akishin Artem	//	1741	//
+//   Akishin Artem   //   1741   //
 
 #include <iostream>
 #include <conio.h>
