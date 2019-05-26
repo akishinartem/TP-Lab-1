@@ -30,20 +30,20 @@ int main()
 	do
 	{
 		system("cls");
-		cout << "Âûáåðèòå äåéñòâèå:" << endl;
-		cout << "[1] Äîáàâèòü ýëåìåíò â î÷åðåäü" << endl;
-		cout << "[2] Óäàëèòü ýëåìåíò èç î÷åðåäè" << endl;
-		cout << "[3] Îòîáðàæåíèå òåêóùåé î÷åðåäè" << endl;
-		cout << "[4] Âû÷èñëèòü ñðåäíåå àðèôìåòè÷åñêîå" << endl;
-		cout << "[5] Ñîçäàòü êîïèþ î÷åðåäè" << endl;
-		cout << "[6] Ñëèÿíèå î÷åðåäåé (òîëüêî ïðè íàëè÷èè êîïèè!)" << endl;
-		cout << "[7] Âûõîä\n=>";
+		cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ:" << endl;
+		cout << "[1] Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ð² Ð¾Ñ‡ÐµÑ€ÐµÐ´ÑŒ" << endl;
+		cout << "[2] Ð˜ÑÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ð¸Ð· Ð¾Ñ‡ÐµÑ€ÐµÐ´Ð¸" << endl;
+		cout << "[3] Ð’Ñ‹Ð²Ð¾Ð´ Ð½Ð° ÑÐºÑ€Ð°Ð½ Ñ‚ÐµÐºÑ‰ÐµÐ¹ Ð¾Ñ‡ÐµÑ€ÐµÐ´Ð¸" << endl;
+		cout << "[4] Ð’Ñ‹Ñ‡Ð¸ÑÐ»ÐµÐ½Ð¸Ðµ ÑÑ€ÐµÐ´Ð½ÐµÐ³Ð¾ Ð°Ñ€Ð¸Ñ„Ð¼ÐµÑ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ð³Ð¾" << endl;
+		cout << "[5] Ð¡Ð¾Ð·Ð´Ð°Ð½Ð¸Ðµ ÐºÐ¾Ð¿Ð¸Ð¸ Ð¾Ñ‡ÐµÑ€ÐµÐ´Ð¸" << endl;
+		cout << "[6] Ð¡Ð»Ð¸ÑÐ½Ð¸Ðµ Ð¾Ñ‡ÐµÑ€ÐµÐ´ÐµÐ¹ (Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð¿Ñ€Ð¸ Ð½Ð°Ð»Ð¸Ñ‡Ð¸Ð¸ ÐºÐ¾Ð¿Ð¸Ð¸!)" << endl;
+		cout << "[7] Ð’Ñ‹Ñ…Ð¾Ð´ Ð¸Ð· Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñ‹\n=>";
 		cin >> menu_choise;
 
 		switch (menu_choise) {
 		case '1':
 			system("cls");
-			cout << "Âûáåðèòå ìîäèôèêàòîð:" << endl;
+			cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¼Ð¾Ð´Ð¸Ñ„Ð¸ÐºÐ°Ñ‚Ð¾Ñ€:" << endl;
 			cout << "[1] Private" << endl;
 			cout << "[2] Protected" << endl;
 			cout << "[3] Public\n=>";
@@ -53,7 +53,7 @@ int main()
 				system("cls");
 				priv.set_a(priv.get_a());
 				priv.set_b(priv.get_b());
-				cout << "Ââåäèòå ýëåìåíò:\n=>";
+				cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚:\n=>";
 				cin >> user_value;
 				priv.add(user_value);
 				break;
@@ -61,7 +61,7 @@ int main()
 				system("cls");
 				prot.set_a(prot.get_a());
 				prot.set_b(prot.get_b());
-				cout << "Ââåäèòå ýëåìåíò:\n=>";
+				cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚:\n=>";
 				cin >> user_value;
 				prot.add(user_value);
 				break;
@@ -69,7 +69,7 @@ int main()
 				system("cls");
 				publ.set_a(publ.get_a());
 				publ.set_b(publ.get_b());
-				cout << "Ââåäèòå ýëåìåíò:\n=>";
+				cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚:\n=>";
 				cin >> user_value;
 				publ.add(user_value);
 				break;
@@ -79,7 +79,7 @@ int main()
 			break;
 		case '2':
 			system("cls");
-			cout << "Âûáåðèòå ìîäèôèêàòîð:" << endl;
+			cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¼Ð¾Ð´Ð¸Ñ„Ð¸ÐºÐ°Ñ‚Ð¾Ñ€:" << endl;
 			cout << "[1] Private" << endl;
 			cout << "[2] Protected" << endl;
 			cout << "[3] Public\n=>";
@@ -112,7 +112,7 @@ int main()
 			break;
 		case '3':
 			system("cls");
-			cout << "Âûáåðèòå ìîäèôèêàòîð:" << endl;
+			cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¼Ð¾Ð´Ð¸Ñ„Ð¸ÐºÐ°Ñ‚Ð¾Ñ€:" << endl;
 			cout << "[1] Private" << endl;
 			cout << "[2] Protected" << endl;
 			cout << "[3] Public\n=>";
@@ -145,7 +145,7 @@ int main()
 			break;
 		case '4':
 			system("cls");
-			cout << "Âûáåðèòå ìîäèôèêàòîð:" << endl;
+			cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¼Ð¾Ð´Ð¸Ñ„Ð¸ÐºÐ°Ñ‚Ð¾Ñ€:" << endl;
 			cout << "[1] Private" << endl;
 			cout << "[2] Protected" << endl;
 			cout << "[3] Public\n=>";
@@ -179,7 +179,7 @@ int main()
 			break;
 		case '5':
 			system("cls");
-			cout << "Âûáåðèòå ìîäèôèêàòîð:" << endl;
+			cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¼Ð¾Ð´Ð¸Ñ„Ð¸ÐºÐ°Ñ‚Ð¾Ñ€:" << endl;
 			cout << "[1] Private" << endl;
 			cout << "[2] Protected" << endl;
 			cout << "[3] Public\n=>";
@@ -215,7 +215,7 @@ int main()
 			break;
 		case '6':
 			system("cls");
-			cout << "Âûáåðèòå ìîäèôèêàòîð:" << endl;
+			cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¼Ð¾Ð´Ð¸Ñ„Ð¸ÐºÐ°Ñ‚Ð¾Ñ€:" << endl;
 			cout << "[1] Private" << endl;
 			cout << "[2] Protected" << endl;
 			cout << "[3] Public\n=>";
