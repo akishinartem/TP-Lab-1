@@ -1,4 +1,4 @@
-#pragma once
+#pragma onc
 #include "q_A.h"
 
 class q_priv : private q_A {
