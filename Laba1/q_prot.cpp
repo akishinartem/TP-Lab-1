@@ -1,5 +1,5 @@
 #include <iostream>
-#include "q_prot.h
+#include "q_prot.h"
 using namespace std;
 
 void q_prot::calc() {
