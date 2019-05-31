@@ -1,6 +1,6 @@
 #pragma once
-#include "q_A.h"
 
+#include "q_A.h"
 class q_prot : protected q_A {
 public:
 	void add(int user_value) { q_A::add(user_value); }
