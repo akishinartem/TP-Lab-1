@@ -1,4 +1,5 @@
-#pragma onc
+#pragma once
+
 #include "Element.h"
 class q_A {
 	elem *a;
