@@ -1,6 +1,6 @@
-#pragma onc
-#include "q_A.h"
+#pragma once
 
+#include "q_A.h"
 class q_priv : private q_A {
 public:
 	void add(int user_value) { q_A::add(user_value); }
