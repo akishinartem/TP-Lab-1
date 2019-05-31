@@ -1,6 +1,5 @@
 #include "q_A.h"
 #include <iostream>
-
 using namespace std;
 
 q_A::q_A() {
