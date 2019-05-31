@@ -1,5 +1,5 @@
 #include <iostream>
-#include "q_publ.h"
+#include "q_publ.h
 using namespace std;
 
 void q_publ::calc() {
