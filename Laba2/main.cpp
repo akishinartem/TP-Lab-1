@@ -12,7 +12,9 @@ int main() {
 	char subChoise;
 	char subsubChoise;
 	Queue q;
-	Chis c;
+	Chis a;
+	Chis b;
+	Chis res;
 
 	system("cls");
 	do
@@ -63,66 +65,135 @@ int main() {
 				q.Print();
 				break;
 			case '4':
-				!(q);
+				if (!(q)) {
+					cout << "Queue is clear!";
+				}
+				else {
+					cout << "Queue has 1 or more elements!";
+				}
 				break;
 			case '5':
 				break;
 			}
+			system("Pause");
 			break;
 		case '2':
-			cout << "\t[1] Add element.\n\t[2] Extract element.\n\t[3] Show class.\n\t[4] Addition | Subtraction.\n\t[5] Comparison.\n\t[6] Exit.\n\n\t>>";
+			cout << "\t[1] Add element.\n\t[2] Show class.\n\t[3] Addition | Subtraction.\n\t[4] Comparison.\n\t[5] Exit.\n\n\t>>";
 			cin >> subChoise;
 			switch (subChoise) {
 			case '1':
-				c.Add();
-				break;
-			case '2':
-				c.Del();
-				break;
-			case '3':
-				cout << "\n\t\tClass: ";
-				c.Print();
-				break;
-			case '4':
-				cout << "\n\t\t[1] Addition(+)\n\t\t[2] Subtraction(-).\n\t\t[3] Exit.\n\t\t>>";
+				cout << "\n\t\tChoose variable:\n\t\t[1] var A.\n\t\t[2] var B.\n\t\t[3] Exit.\n\n\t\t>>";
 				cin >> subsubChoise;
-				/*switch (subsubChoise) {
+				switch (subsubChoise) {
 				case '1':
-					
+					cout << "\n\n\t\t\tType element:\n\n\t\t\t>>";
+					cin >> usrVal;
+					a.SetX(usrVal);
 					break;
 				case '2':
-
+					cout << "\n\n\t\t\tType element:\n\n\t\t\t>>";
+					cin >> usrVal;
+					b.SetX(usrVal);
 					break;
 				case '3':
 					break;
 				}
-				break;*/
-			case '5':
-				cout << "\n\t\t[1] Lesser(<)\n\t\t[2] Larger(>).\n\t\t[3] Equal.\n\t\t[4] Unequal.\n\t\t[5]Exit.\n\t\t>>";
+				break;
+			case '2':
+				cout << "\n\n\t\tChoose Class:\n\t\t[1] var A.\n\t\t[2] var B.\n\t\t[3] Exit.\n\n\t\t>>";
 				cin >> subsubChoise;
-				/*switch (subsubChoise) {
+				switch (subsubChoise) {
 				case '1':
-					
+					cout << "\n\n\t\t\tClass: ";
+					a.Print();
+					cout << "\n\n\t\t\t";
 					break;
 				case '2':
-
+					cout << "\n\n\t\t\tClass: ";
+					b.Print();
+					cout << "\n\n\t\t\t";
 					break;
 				case '3':
-
+					break;
+				}
+				break;
+			case '3':
+				cout << "\n\t\t[1] Addition(+)\n\t\t[2] Subtraction(-).\n\t\t[3] Exit.\n\t\t>>";
+				cin >> subsubChoise;
+				switch (subsubChoise) {
+				case '1':
+					res = a;
+					a = a + b;
+					cout << "\n\n\t\t\tResult:";
+					res.Print();
+					cout << "\n\t\t\t+\n\t\t\t";
+					b.Print();
+					cout << "\n\t\t\t=\n\t\t\t";
+					a.Print();
+					a = res;
+					break;
+				case '2':
+					res = a;
+					a = a - b;
+					cout << "\n\n\t\t\tResult:";
+					res.Print();
+					cout << "\n\n\t\t\t-\n\n\t\t\t";
+					b.Print();
+					cout << "\n\n\t\t\t=\n\n\t\t\t";
+					a.Print();
+					a = res;
+					break;
+				case '3':
+					break;
+				}
+				break;
+			case '4':
+				cout << "\n\t\t[1] Lesser(<)\n\t\t[2] Larger(>).\n\t\t[3] Equal.\n\t\t[4] Unequal.\n\t\t[5]Exit.\n\t\t>>";
+				cin >> subsubChoise;
+				switch (subsubChoise) {
+				case '1':
+					if (a < b) {
+						cout << "\n\n\t\t\tvar A is lesser than var B [A < B]";
+					}
+					else {
+						cout << "\n\n\t\t\tvar A is better than var B [A > B]";
+					}
+					break;
+				case '2':
+					if (a > b) {
+						cout << "\n\n\t\t\tvar A is better than var B [A > B]";
+					}
+					else {
+						cout << "\n\n\t\t\tvar A is lesser than var B [A < B]";
+					}
+					break;
+				case '3':
+					if (a == b) {
+						cout << "\n\n\t\t\tvar A equal to var B [A = B]";
+					}
+					else {
+						cout << "\n\n\t\t\tvar A not equal to var B [A != B]";
+					}
 					break;
 				case '4':
-
+					if (a == b) {
+						cout << "\n\n\t\t\tvar A not equal to var B [A != B]";
+					}
+					else {
+						cout << "\n\n\t\t\tvar A equal to var B [A = B]";
+					}
 					break;
 				case '5':
 					break;
-				}*/
+				}
 			}
+			system("Pause");
 			break;
 		case '3':
+			Choise = '3';
 			break;
 		}
-		system("Pause");
 		system("cls");
-	} while (Choise != '7');
+	} while (Choise != '3');
 	return 0;
 }

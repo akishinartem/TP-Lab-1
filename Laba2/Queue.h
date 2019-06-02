@@ -21,7 +21,7 @@ public:
 	void Del();
 	void Print();
 
-	Queue& operator!();
+	bool operator!();
 	Queue& operator++();
 	Queue& operator--(int);
 

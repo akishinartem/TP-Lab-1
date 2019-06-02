@@ -56,6 +56,13 @@ void Queue::Add() {
 
 void Queue::Del() {
 	elem*temp = Tail;
+	if (Tail == Head) {
+		delete Head;
+		Head = NULL;
+		Tail = NULL;
+		k--;
+		return;
+	}
 	while (temp->Prev != NULL) {
 		temp = temp->Prev;
 	}
@@ -65,28 +72,32 @@ void Queue::Del() {
 }
 
 void Queue::Print() {
-	elem *temp = GetTail();
-	int *och = new int[GetK()];
-	int l = GetK() - 1;
-	for (int i = 0; i < GetK(); ++i) {
-		och[l--] = temp->Val;
-		temp = temp->Prev;
+	if (k == 0) {
+		elem *temp = Tail;
+		int *och = new int[GetK()];
+		int l = GetK() - 1;
+		for (int i = 0; i < GetK(); ++i) {
+			och[l--] = temp->Val;
+			temp = temp->Prev;
+		}
+		for (int i = 0; i < GetK(); ++i) {
+			i != GetK() - 1 ? cout << "[" << och[i] << "], " : cout << "[" << och[i] << "]\n";
+		}
+		delete[] och;
 	}
-	for (int i = 0; i < GetK(); ++i) {
-		i != GetK() - 1 ? cout << "[" << och[i] << "], " : cout << "[" << och[i] << "]\n";
+	else {
+		cout << "Ochered' pysta!";
 	}
-	delete[] och;
 }
 
 
-Queue& Queue::operator!() {
+bool Queue::operator!() {
 	if (GetK() == 0) {
-		cout << "\n\tQueue is clear!\n";
+		return true;
 	}
 	else {
-		cout << "\n\tQueue has 1 or more elements!\n";
-	}
-	return *this;
+		return false;
+	};
 }
 
 Queue& Queue::operator++() {
@@ -95,17 +106,28 @@ Queue& Queue::operator++() {
 }
 
 Queue& Queue::operator--(int) {
-	elem*temp = Tail;
-	while (temp->Prev->Prev != Head) {
-		temp = temp->Prev;
+	if (this->GetK() < 2) {
+		cout << "error";
+		return *this;
 	}
-	delete Head;
-	delete temp->Prev;
-	Head = temp;
-	temp->Prev = NULL;
-	k--;
-	k--;
-	return *this;
+	else if (this->GetK() == 2) {
+		delete Tail;
+		delete Head;
+		return *this;
+	}
+	else {
+		elem*temp = Tail;
+		while (temp->Prev->Prev != Head) {
+			temp = temp->Prev;
+		}
+		delete Head;
+		delete temp->Prev;
+		Head = temp;
+		temp->Prev = NULL;
+		k--;
+		k--;
+		return *this;
+	}
 }
 
 Queue& operator++(Queue &op1, int usrVal) {

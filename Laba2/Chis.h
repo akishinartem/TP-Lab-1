@@ -1,28 +1,25 @@
 #pragma once
 
 #include <iostream>
-#include "elem.h"
 
 class Chis {
-	elem *ptr;
-	int k;
+	int *x;
 public:
 	Chis();
 	~Chis();
+	Chis(int usrVal);
+	int GetX();
+	void SetX(int usrVal);
 
-	elem* Getptr();
-	int GetK();
-	void Setptr(elem *Val);
-
-	void Add();
-	void Del();
 	void Print();
+	Chis(const Chis& op1);
 	
-	Chis& operator+();
+	Chis operator+(Chis op1);
+	Chis operator=(Chis op1);
 	bool operator<(Chis &op1);
 	bool operator>(Chis &op1);
 
-	friend Chis& operator-(Chis &op1, Chis &op2);
+	friend Chis operator-(Chis op1, Chis op2);
 	friend bool operator==(Chis &op1, Chis &op2);
 	friend bool operator!=(Chis &op1, Chis &op2);
 };
