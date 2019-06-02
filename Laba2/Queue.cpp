@@ -55,24 +55,25 @@ void Queue::Add() {
 }
 
 void Queue::Del() {
-	elem*temp = Tail;
 	if (Tail == Head) {
 		delete Head;
-		Head = NULL;
-		Tail = NULL;
-		k--;
-		return;
+		Head = nullptr;
+		Tail = nullptr;
 	}
-	while (temp->Prev != NULL) {
-		temp = temp->Prev;
+	else {
+		elem *temp = Tail;
+		while (temp->Prev != Head) {
+			temp = temp->Prev;
+		}
+		delete Head;
+		Head = temp;
+		temp = Tail;
 	}
-	delete Head;
-	Head = temp;
 	k--;
 }
 
 void Queue::Print() {
-	if (k == 0) {
+	if (k != 0) {
 		elem *temp = Tail;
 		int *och = new int[GetK()];
 		int l = GetK() - 1;
@@ -89,7 +90,6 @@ void Queue::Print() {
 		cout << "Ochered' pysta!";
 	}
 }
-
 
 bool Queue::operator!() {
 	if (GetK() == 0) {
