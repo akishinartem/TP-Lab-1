@@ -1,4 +1,5 @@
-#pragma once
+#pragma oncе
+
 #include <iostream>
 #include "elem.h"
 
