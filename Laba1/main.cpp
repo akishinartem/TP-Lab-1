@@ -12,18 +12,15 @@
 using namespace std;
 
 int main()
-{	
-	setlocale(LC_ALL,"RUS");
+{
+	setlocale(LC_ALL, "RUS");
 	q_A *q1 = 0;
+	q_A base;
+	q_A base_copy;
+	q_A base_merge;
 	q_priv priv;
-	q_priv priv_copy;
-	q_priv *priv_merge = 0;
 	q_publ publ;
-	q_publ publ_copy;
-	q_publ *publ_merge = 0;
 	q_prot prot;
-	q_prot prot_copy;
-	q_prot *prot_merge = 0;
 
 	int user_value = 0;
 	char menu_choise;
@@ -41,109 +38,31 @@ int main()
 		cout << "[6] Слияние очередей (только при наличии копии!)" << endl;
 		cout << "[7] Выход из программы\n=>";
 		cin >> menu_choise;
-
 		switch (menu_choise) {
 		case '1':
 			system("cls");
-			cout << "Выберите модификатор:" << endl;
-			cout << "[1] Private" << endl;
-			cout << "[2] Protected" << endl;
-			cout << "[3] Public\n=>";
-			cin >> submenu_choise;
-			switch (submenu_choise) {
-			case '1':
-				system("cls");
-				priv.set_a(priv.get_a());
-				priv.set_b(priv.get_b());
-				cout << "Введите элемент:\n=>";
-				cin >> user_value;
-				priv.add(user_value);
-				break;
-			case '2':
-				system("cls");
-				prot.set_a(prot.get_a());
-				prot.set_b(prot.get_b());
-				cout << "Введите элемент:\n=>";
-				cin >> user_value;
-				prot.add(user_value);
-				break;
-			case '3':
-				system("cls");
-				publ.set_a(publ.get_a());
-				publ.set_b(publ.get_b());
-				cout << "Введите элемент:\n=>";
-				cin >> user_value;
-				publ.add(user_value);
-				break;
-			default:
-				break;
-			}
+			base.set_a(base.get_a());
+			base.set_b(base.get_b());
+			cout << "Введите элемент:\n=>";
+			cin >> user_value;
+			base.add(user_value);
 			break;
 		case '2':
 			system("cls");
-			cout << "Выберите модификатор:" << endl;
-			cout << "[1] Private" << endl;
-			cout << "[2] Protected" << endl;
-			cout << "[3] Public\n=>";
-			cin >> submenu_choise;
-			switch (submenu_choise) {
-			case '1':
-				system("cls");
-				priv.set_a(priv.get_b());
-				priv.set_b(priv.get_b());
-				priv.del();
-				system("Pause");
-				break;
-			case '2':
-				system("cls");
-				prot.set_a(prot.get_a());
-				prot.set_b(prot.get_b());
-				prot.del();
-				system("Pause");
-				break;
-			case '3':
-				system("cls");
-				publ.set_a(publ.get_a());
-				publ.set_b(publ.get_b());
-				publ.del();
-				system("Pause");
-				break;
-			default:
-				break;
-			}
+			base.set_a(base.get_a());
+			base.set_b(base.get_b());
+			base.del();
+			cout << "Исключение успешно!" << endl;
+			system("Pause");
 			break;
 		case '3':
 			system("cls");
-			cout << "Выберите модификатор:" << endl;
-			cout << "[1] Private" << endl;
-			cout << "[2] Protected" << endl;
-			cout << "[3] Public\n=>";
-			cin >> submenu_choise;
-			switch (submenu_choise) {
-			case '1':
-				system("cls");
-				priv.set_a(priv.get_a());
-				priv.set_b(priv.get_b());
-				priv.print_queue();
-				system("Pause");
-				break;
-			case '2':
-				system("cls");
-				prot.set_a(prot.get_a());
-				prot.set_b(prot.get_b());
-				prot.print_queue();
-				system("Pause");
-				break;
-			case '3':
-				system("cls");
-				publ.set_a(publ.get_a());
-				publ.set_b(publ.get_b());
-				publ.print_queue();
-				system("Pause");
-				break;
-			default:
-				break;
-			}
+			cout << "Текущая очередь:" << endl;
+			base.set_a(base.get_a());
+			base.set_b(base.get_b());
+			base.print_queue();
+			cout << "\n";
+			system("Pause");
 			break;
 		case '4':
 			system("cls");
@@ -155,23 +74,22 @@ int main()
 			switch (submenu_choise) {
 			case '1':
 				system("cls");
-				priv.set_a(priv.get_a());
-				priv.set_b(priv.get_b());
+				priv.new_a(base.get_a());
+				priv.new_b(base.get_b());
 				priv.calc();
 				system("Pause");
 				break;
 			case '2':
 				system("cls");
-				prot.set_a(prot.get_a());
-				prot.set_b(prot.get_b());
-				prot.get_k();
+				prot.new_a(base.get_a());
+				prot.new_b(base.get_b());
 				prot.calc();
 				system("Pause");
 				break;
 			case '3':
 				system("cls");
-				publ.set_a(publ.get_a());
-				publ.set_b(publ.get_b());
+				publ.new_a(base.get_a());
+				publ.new_b(base.get_b());
 				publ.calc();
 				system("Pause");
 				break;
@@ -181,75 +99,20 @@ int main()
 			break;
 		case '5':
 			system("cls");
-			cout << "Выберите модификатор:" << endl;
-			cout << "[1] Private" << endl;
-			cout << "[2] Protected" << endl;
-			cout << "[3] Public\n=>";
-			cin >> submenu_choise;
-			switch (submenu_choise) {
-			case '1':
-				system("cls");
-				priv.set_a(priv.get_a());
-				priv.set_b(priv.get_b());
-				priv.copy_queue(priv_copy);
-				priv_copy.print_queue();
-				system("Pause");
-				break;
-			case '2':
-				system("cls");
-				prot.set_a(prot.get_a());
-				prot.set_b(prot.get_b());
-				prot.copy_queue(prot_copy);
-				prot_copy.print_queue();
-				system("Pause");
-				break;
-			case '3':
-				system("cls");
-				publ.set_a(publ.get_a());
-				publ.set_b(publ.get_b());
-				publ.copy_queue(publ_copy);
-				publ_copy.print_queue();
-				system("Pause");
-				break;
-			default:
-				break;
-			}
+			base.set_a(base.get_a());
+			base.set_b(base.get_b());
+			base.copy_queue(base_copy);
+			cout << "Копия создана: ";
+			base_copy.print_queue();
+			system("Pause");
 			break;
 		case '6':
 			system("cls");
-			cout << "Выберите модификатор:" << endl;
-			cout << "[1] Private" << endl;
-			cout << "[2] Protected" << endl;
-			cout << "[3] Public\n=>";
-			cin >> submenu_choise;
-			switch (submenu_choise) {
-			case '1':
-				system("cls");
-				priv.set_a(priv.get_a());
-				priv.set_b(priv.get_b());
-				priv_merge = priv.merge(&priv_copy);
-				priv_merge->print_queue();
-				system("Pause");
-				break;
-			case '2':
-				system("cls");
-				prot.set_a(prot.get_a());
-				prot.set_b(prot.get_b());
-				prot_merge = prot.merge(&prot_copy);
-				prot_merge->print_queue();
-				system("Pause");
-				break;
-			case '3':
-				system("cls");
-				publ.set_a(publ.get_a());
-				publ.set_b(publ.get_b());
-				publ_merge = publ.merge(&publ_copy);
-				publ_merge->print_queue();
-				system("Pause");
-				break;
-			default:
-				break;
-			}
+			base.set_a(base.get_a());
+			base.set_b(base.get_b());
+			base_merge = *base.merge(&base_copy);
+			base_merge.print_queue();
+			system("Pause");
 			break;
 		case '7':
 			menu_choise = 7;
@@ -257,7 +120,6 @@ int main()
 		default:
 			break;
 		}
-
 	} while (menu_choise != 7);
 	return 0;
 }
