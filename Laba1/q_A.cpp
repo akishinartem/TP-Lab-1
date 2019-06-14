@@ -60,7 +60,7 @@ void q_A::add(int user_value) {
 void q_A::print_queue() {
 	if (!k)
 	{
-		cout << "PUSTO" << endl;
+		cout << "Очередь пуста!" << endl;
 		return;
 	}
 	elem *temp = get_b();
@@ -70,8 +70,9 @@ void q_A::print_queue() {
 		och[l--] = temp->Val;
 		temp = temp->Prev;
 	}
+	cout << "Текущая очередь:" << endl;
 	for (int i = 0; i < get_k(); ++i) {
-		i != get_k() - 1 ? cout << "[" << och[i] << "], " : cout << och[i] << "]\n";
+		cout << "[" << och[i] << "] ";
 	}
 	delete[] och;
 }
