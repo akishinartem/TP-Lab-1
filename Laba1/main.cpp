@@ -57,7 +57,6 @@ int main()
 			break;
 		case '3':
 			system("cls");
-			cout << "Текущая очередь:" << endl;
 			base.set_a(base.get_a());
 			base.set_b(base.get_b());
 			base.print_queue();
