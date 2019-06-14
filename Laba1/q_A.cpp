@@ -18,12 +18,26 @@ q_A::~q_A() {
 }
 
 void q_A::del() {
-	elem*temp = b;
-	while (temp->Prev != NULL) {
-		temp = temp->Prev;
+	if (!k)
+	{
+		cout << "PUSTO" << endl;
+		return;
 	}
-	delete a;
-	a = b;
+	if (k == 1) {
+		delete a;
+		a = nullptr;
+		b = nullptr;
+	}
+	else 
+	{
+		elem *temp = b;
+		while (temp->Prev != a) {
+			temp = temp->Prev;
+		}
+		delete a;
+		a = temp;
+		a->Prev = nullptr;
+	}
 	k--;
 }
 
@@ -44,6 +58,11 @@ void q_A::add(int user_value) {
 }
 
 void q_A::print_queue() {
+	if (!k)
+	{
+		cout << "PUSTO" << endl;
+		return;
+	}
 	elem *temp = get_b();
 	int *och = new int[get_k()];
 	int l = get_k() - 1;
@@ -52,13 +71,12 @@ void q_A::print_queue() {
 		temp = temp->Prev;
 	}
 	for (int i = 0; i < get_k(); ++i) {
-		i != get_k() - 1 ? cout << "[" <<och[i] << "], " : cout << och[i] << "]\n";
+		i != get_k() - 1 ? cout << "[" << och[i] << "], " : cout << och[i] << "]\n";
 	}
 	delete[] och;
 }
 
 void q_A::copy_queue(q_A &op1) {
-
 	elem *temp = b;
 	int *och = new int[k];
 	int l = k - 1;
@@ -67,7 +85,7 @@ void q_A::copy_queue(q_A &op1) {
 		temp = temp->Prev;
 	}
 	for (l = 0; l < k; l++)
-			op1.add(och[l]);
+		op1.add(och[l]);
 	delete[] och;
 }
 
