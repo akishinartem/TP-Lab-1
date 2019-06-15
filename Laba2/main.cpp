@@ -7,6 +7,7 @@
 using namespace std;
 
 int main() {
+	setlocale(LC_ALL, "Rus");
 	int usrVal = 0;
 	char Choise;
 	char subChoise;
@@ -19,57 +20,66 @@ int main() {
 	system("cls");
 	do
 	{
-		cout << "Choose action:\n[1] Cyclic class actions\n[2] Integer class actions\n[3] Exit.\n\n>> ";
+		cout << "Выберите структуру:" << endl;
+		cout << "[1] Циклическая очередь." << endl;
+		cout << "[2] Класс целых чисел." << endl;
+		cout << "[3] Выход.\n>> ";
 		cin >> Choise;
+		cout << "\n";
 		switch (Choise) {
 		case '1':
-			cout << "\t[1] Add element.\n\t[2] Extract element.\n\t[3] Show queue.\n\t[4] !()[empty - check].\n\t[5] Exit.\n\n\t>>";
+			cout << "Выберите действие:" << endl;
+			cout << "[1] Добавление элемента." << endl;
+			cout << "[2] Исключение элемента." << endl;
+			cout << "[3] Показать очередь." << endl;
+			cout << "[4] Проверка на пустоту [!()]." << endl;
+			cout << "[5] Выход.\n>> ";
 			cin >> subChoise;
+			cout << "\n";
 			switch (subChoise) {
 			case '1':
-				cout << "\t\tSelect option:\n\t\t[1] Standart.\n\t\t[2] ++() [pref, method].\n\t\t[3] ()++ [post, friend].\n\t\t[4] Exit.\n\n\t\t>> ";
+				cout << "[1] Префиксный метод [++(1 элемент)]." << endl;
+				cout << "[2] Постфиксная дружественная функция [(2 элемента)++]." << endl;
+				cout << "[3] Выход.\n>> ";
 				cin >> subsubChoise;
+				cout << "\n";
 				switch (subsubChoise) {
 				case '1':
-					q.Add();
-					break;
-				case '2':
 					++(q);
 					break;
-				case '3':
+				case '2':
 					(q)++;
 					break;
-				case '4':
+				case '3':
 					break;
 				}
 				break;
 			case '2':
-				cout << "\t\tSelect option:\n\t\t[1] Standart.\n\t\t[2] ()-- [post, method].\n\t\t[3] --() [pref, friend].\n\t\t[4] Exit.\n\n\t\t>> ";
+				cout << "[1] Постфиксный метод [(2 элемента)--]." << endl;
+				cout << "[2] Префиксная дружественная функция [--(1 элемент)]." << endl;
+				cout << "[3] Выход.\n>> ";
 				cin >> subsubChoise;
+				cout << "\n";
 				switch (subsubChoise) {
 				case '1':
-					q.Del();
-					break;
-				case '2':
 					(q)--;
 					break;
-				case '3':
+				case '2':
 					--(q);
 					break;
-				case '4':
+				case '3':
 					break;
 				}
 				break;
 			case '3':
-				cout << "\n\t\tQueue: ";
 				q.Print();
 				break;
 			case '4':
 				if (!(q)) {
-					cout << "Queue is clear!";
+					cout << "Очередь пуста!" << endl;
 				}
 				else {
-					cout << "Queue has 1 or more elements!";
+					cout << "Текущая очередь содержит элементы!" << endl;
 				}
 				break;
 			case '5':
@@ -78,109 +88,168 @@ int main() {
 			system("Pause");
 			break;
 		case '2':
-			cout << "\t[1] Add element.\n\t[2] Show class.\n\t[3] Addition | Subtraction.\n\t[4] Comparison.\n\t[5] Exit.\n\n\t>>";
+			cout << "Выберите действие:" << endl;
+			cout << "[1] Добавление элементов." << endl;
+			cout << "[2] Показать текущий класс." << endl;
+			cout << "[3] Сложение || Вычитание." << endl;
+			cout << "[4] Сравнение." << endl;
+			cout << "[5] Выход.\n>> ";
 			cin >> subChoise;
+			cout << "\n";
 			switch (subChoise) {
 			case '1':
-				cout << "\n\t\tChoose variable:\n\t\t[1] var A.\n\t\t[2] var B.\n\t\t[3] Exit.\n\n\t\t>>";
+				cout << "Выберите класс:" << endl;
+				cout << "[1] Класс A." << endl;
+				cout << "[2] Класс B." << endl;
+				cout << "[3] Выход.\n>> ";
 				cin >> subsubChoise;
+				cout << "\n";
 				switch (subsubChoise) {
 				case '1':
-					cout << "\n\n\t\t\tType element:\n\n\t\t\t>>";
+					cout << "Введите элемент:\n>> ";
 					cin >> usrVal;
 					a.SetX(usrVal);
+					cout << "\n";
 					break;
 				case '2':
-					cout << "\n\n\t\t\tType element:\n\n\t\t\t>>";
+					cout << "Введите элемент:\n>> ";
 					cin >> usrVal;
 					b.SetX(usrVal);
+					cout << "\n";
 					break;
 				case '3':
 					break;
 				}
 				break;
 			case '2':
-				cout << "\n\n\t\tChoose Class:\n\t\t[1] var A.\n\t\t[2] var B.\n\t\t[3] Exit.\n\n\t\t>>";
+				cout << "Выберите класс:" << endl;
+				cout << "[1] Класс A." << endl;
+				cout << "[2] Класс B." << endl;
+				cout << "[3] Выход.\n>> ";
 				cin >> subsubChoise;
+				cout << "\n";
 				switch (subsubChoise) {
 				case '1':
-					cout << "\n\n\t\t\tClass: ";
+					cout << "Текущий класс: ";
 					a.Print();
-					cout << "\n\n\t\t\t";
+					cout << "\n";
 					break;
 				case '2':
-					cout << "\n\n\t\t\tClass: ";
+					cout << "Текущий класс: ";
 					b.Print();
-					cout << "\n\n\t\t\t";
+					cout << "\n";
 					break;
 				case '3':
 					break;
 				}
 				break;
 			case '3':
-				cout << "\n\t\t[1] Addition(+)\n\t\t[2] Subtraction(-).\n\t\t[3] Exit.\n\t\t>>";
+				cout << "Выберите действие:" << endl;
+				cout << "[1] Сложение." << endl;
+				cout << "[2] Вычитание." << endl;
+				cout << "[3] Выход.\n>> ";
 				cin >> subsubChoise;
+				cout << "\n";
 				switch (subsubChoise) {
 				case '1':
 					res = a;
 					a = a + b;
-					cout << "\n\n\t\t\tResult:";
+					cout << "Результат сложения:" << endl;
 					res.Print();
-					cout << "\n\t\t\t+\n\t\t\t";
+					cout << " + ";
 					b.Print();
-					cout << "\n\t\t\t=\n\t\t\t";
+					cout << " = ";
 					a.Print();
 					a = res;
+					cout << "\n";
 					break;
 				case '2':
 					res = a;
 					a = a - b;
-					cout << "\n\n\t\t\tResult:";
+					cout << "Результат вычитания:" << endl;
 					res.Print();
-					cout << "\n\n\t\t\t-\n\n\t\t\t";
+					cout << " - ";
 					b.Print();
-					cout << "\n\n\t\t\t=\n\n\t\t\t";
+					cout << " = ";
 					a.Print();
 					a = res;
+					cout << "\n";
 					break;
 				case '3':
 					break;
 				}
 				break;
 			case '4':
-				cout << "\n\t\t[1] Lesser(<)\n\t\t[2] Larger(>).\n\t\t[3] Equal.\n\t\t[4] Unequal.\n\t\t[5]Exit.\n\t\t>>";
+				cout << "[1] Меньше [<<]" << endl;
+				cout << "[2] Больше [>>]." << endl;
+				cout << "[3] Равенство [==]." << endl;
+				cout << "[4] Неравенство [!=]." << endl;
+				cout << "[5] Выход.\n>> ";
 				cin >> subsubChoise;
+				cout << "\n";
 				switch (subsubChoise) {
 				case '1':
 					if (a < b) {
-						cout << "\n\n\t\t\tvar A is lesser than var B [A < B]";
+						cout << "Результат:\nКласс A меньше, чем класс B" << endl;
+						a.Print();
+						cout << " << ";
+						b.Print();
+						cout << "\n";
 					}
 					else {
-						cout << "\n\n\t\t\tvar A is better than var B [A > B]";
+						cout << "Результат:\nКласс A больше, чем класс B" << endl;
+						a.Print();
+						cout << " >> ";
+						b.Print();
+						cout << "\n";
 					}
 					break;
 				case '2':
 					if (a > b) {
-						cout << "\n\n\t\t\tvar A is better than var B [A > B]";
+						cout << "Результат:\nКласс A больше, чем класс B" << endl;
+						a.Print();
+						cout << " >> ";
+						b.Print();
+						cout << "\n";
 					}
 					else {
-						cout << "\n\n\t\t\tvar A is lesser than var B [A < B]";
+						cout << "Результат:\nКласс A меньше, чем класс B" << endl;
+						a.Print();
+						cout << " << ";
+						b.Print();
+						cout << "\n";
 					}
 					break;
 				case '3':
 					if (a == b) {
-						cout << "\n\n\t\t\tvar A equal to var B [A = B]";
+						cout << "Результат:\nКласс A равен классу B" << endl;
+						a.Print();
+						cout << " == ";
+						b.Print();
+						cout << "\n";
 					}
 					else {
-						cout << "\n\n\t\t\tvar A not equal to var B [A != B]";
+						cout << "Результат:\nКласс A неравен классу B" << endl;
+						a.Print();
+						cout << " != ";
+						b.Print();
+						cout << "\n";
 					}
 					break;
 				case '4':
 					if (a == b) {
-						cout << "\n\n\t\t\tvar A not equal to var B [A != B]";
+						cout << "Результат:\nКласс A неравен классу B" << endl;
+						a.Print();
+						cout << " != ";
+						b.Print();
+						cout << "\n";
 					}
 					else {
-						cout << "\n\n\t\t\tvar A equal to var B [A = B]";
+						cout << "Результат:\nКласс A равен классу B" << endl;
+						a.Print();
+						cout << " == ";
+						b.Print();
+						cout << "\n";
 					}
 					break;
 				case '5':
