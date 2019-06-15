@@ -1,7 +1,6 @@
 #include "Queue.h"
 #include <random>
 #include <ctime>
-
 using namespace std;
 
 Queue::Queue() {
@@ -56,40 +55,46 @@ void Queue::Add() {
 }
 
 void Queue::Del() {
-	if (Tail == Head) {
+	if (!k)
+	{
+		return;
+	}
+	if (k == 1) {
 		delete Head;
 		Head = nullptr;
 		Tail = nullptr;
 	}
-	else {
+	else
+	{
 		elem *temp = Tail;
 		while (temp->Prev != Head) {
 			temp = temp->Prev;
 		}
 		delete Head;
 		Head = temp;
-		temp = Tail;
+		Head->Prev = nullptr;
 	}
 	k--;
 }
 
 void Queue::Print() {
-	if (k != 0) {
-		elem *temp = Tail;
-		int *och = new int[GetK()];
-		int l = GetK() - 1;
-		for (int i = 0; i < GetK(); ++i) {
-			och[l--] = temp->Val;
-			temp = temp->Prev;
-		}
-		for (int i = 0; i < GetK(); ++i) {
-			i != GetK() - 1 ? cout << "[" << och[i] << "], " : cout << "[" << och[i] << "]\n";
-		}
-		delete[] och;
+	if (!k) {
+		cout << "Очередь пуста!";
+		return;
 	}
-	else {
-		cout << "Ochered' pysta!";
+	elem *temp = GetTail();
+	int *och = new int[GetK()];
+	int l = GetK() - 1;
+	for (int i = 0; i < GetK(); ++i) {
+		och[l--] = temp->Val;
+		temp = temp->Prev;
 	}
+	cout << "Текущая очередь: ";
+	for (int i = 0; i < GetK(); ++i) {
+		cout << "[" << och[i] << "] ";
+	}
+	cout << "\n";
+	delete[] och;
 }
 
 bool Queue::operator!() {
@@ -108,7 +113,7 @@ Queue& Queue::operator++() {
 
 Queue& Queue::operator--(int) {
 	if (this->GetK() < 2) {
-		cout << "error";
+		cout << "Ошибка!";
 		return *this;
 	}
 	else if (this->GetK() == 2) {
