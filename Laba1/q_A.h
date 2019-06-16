@@ -11,6 +11,7 @@ public:
 	void del();
 	void add(int user_value);
 	void print_queue();
+	int calc();
 	void copy_queue(q_A &op1);
 	q_A *merge(q_A *op1);
 	elem *get_a();
