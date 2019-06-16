@@ -238,16 +238,16 @@ int main() {
 					break;
 				case '4':
 					if (a == b) {
-						cout << "Результат:\nКласс A неравен классу B" << endl;
+						cout << "Результат:\nКласс A равен классу B" << endl;
 						a.Print();
-						cout << " != ";
+						cout << " == ";
 						b.Print();
 						cout << "\n";
 					}
 					else {
-						cout << "Результат:\nКласс A равен классу B" << endl;
+						cout << "Результат:\nКласс A неравен классу B" << endl;
 						a.Print();
-						cout << " == ";
+						cout << " != ";
 						b.Print();
 						cout << "\n";
 					}
