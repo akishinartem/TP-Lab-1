@@ -65,36 +65,12 @@ int main()
 			break;
 		case '4':
 			system("cls");
-			cout << "Выберите модификатор:" << endl;
-			cout << "[1] Private" << endl;
-			cout << "[2] Protected" << endl;
-			cout << "[3] Public\n=>";
-			cin >> submenu_choise;
-			switch (submenu_choise) {
-			case '1':
-				system("cls");
-				priv.new_a(base.get_a());
-				priv.new_b(base.get_b());
-				priv.calc();
-				system("Pause");
-				break;
-			case '2':
-				system("cls");
-				prot.new_a(base.get_a());
-				prot.new_b(base.get_b());
-				prot.calc();
-				system("Pause");
-				break;
-			case '3':
-				system("cls");
-				publ.new_a(base.get_a());
-				publ.new_b(base.get_b());
-				publ.calc();
-				system("Pause");
-				break;
-			default:
-				break;
-			}
+			cout << "Текущая очередь:" << endl;
+			base.set_a(base.get_a());
+			base.set_b(base.get_b());
+			base.print_queue();
+			base.calc();
+			system("Pause");
 			break;
 		case '5':
 			system("cls");
