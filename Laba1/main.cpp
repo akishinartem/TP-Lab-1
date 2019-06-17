@@ -65,11 +65,40 @@ int main()
 			break;
 		case '4':
 			system("cls");
-			cout << "Текущая очередь:" << endl;
-			base.set_a(base.get_a());
-			base.set_b(base.get_b());
-			base.print_queue();
-			base.calc();
+			cout << "Выберите модификатор доступа:" << endl;
+			cout << "[1] Private." << endl;
+			cout << "[2] Protected." << endl;
+			cout << "[3] Public." << endl;
+			cout << "[4] Выход." << endl;
+			cout << "=> ";
+			cin >> submenu_choise;
+			cout << "\n";
+			switch(submenu_choice) {
+			case '1':
+				cout << "Текущая очередь:" << endl;
+				priv.set_a(base.get_a());
+				priv.set_b(base.get_b());
+				priv.print_queue();
+				priv.calc();
+				break;
+			case '2':
+				cout << "Текущая очередь:" << endl;
+				priv.set_a(base.get_a());
+				priv.set_b(base.get_b());
+				priv.print_queue();
+				priv.calc();
+				break;
+			case '3':
+				cout << "Текущая очередь:" << endl;
+				priv.set_a(base.get_a());
+				priv.set_b(base.get_b());
+				priv.print_queue();
+				priv.calc();
+				break;
+			case '4':
+				break;
+			}
+			
 			system("Pause");
 			break;
 		case '5':
