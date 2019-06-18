@@ -1,7 +1,6 @@
 #pragma once
 #include "Area.h"
 #include <iostream>
-#include <math.h>
 
 using namespace std;
 
@@ -12,5 +11,5 @@ class Triangle : public Area {
 public:
 	Triangle();
 	~Triangle();
-	double Calc() override;
+	double Calc();
 };
