@@ -12,5 +12,5 @@ class Circle: public Area {
 public:
 	Circle();
 	~Circle();
-	double Calc() override;
+	double Calc();
 };
