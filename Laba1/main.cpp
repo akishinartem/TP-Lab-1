@@ -1,5 +1,3 @@
-/* Akishin Artem / 1741 */
-
 #include <iostream>
 #include <conio.h>
 #include <windows.h>
@@ -11,8 +9,7 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
 	setlocale(LC_ALL, "RUS");
 	q_A *q1 = 0;
 	q_A base;
@@ -73,32 +70,32 @@ int main()
 			cout << "=> ";
 			cin >> submenu_choise;
 			cout << "\n";
-			switch(submenu_choice) {
+			switch (submenu_choise) {
 			case '1':
-				cout << "Текущая очередь:" << endl;
-				priv.set_a(base.get_a());
-				priv.set_b(base.get_b());
-				priv.print_queue();
+				priv.new_a(base.get_a());
+				priv.new_b(base.get_b());
+				priv.new_k(base.get_k());
+				priv.print();
 				priv.calc();
 				break;
 			case '2':
-				cout << "Текущая очередь:" << endl;
-				priv.set_a(base.get_a());
-				priv.set_b(base.get_b());
-				priv.print_queue();
-				priv.calc();
+				prot.new_a(base.get_a());
+				prot.new_b(base.get_b());
+				prot.new_k(base.get_k());
+				prot.print();
+				prot.calc();
 				break;
 			case '3':
 				cout << "Текущая очередь:" << endl;
-				priv.set_a(base.get_a());
-				priv.set_b(base.get_b());
-				priv.print_queue();
-				priv.calc();
+				publ.set_a(base.get_a());
+				publ.set_b(base.get_b());
+				publ.new_k(base.get_k());
+				publ.print();
+				publ.calc();
 				break;
 			case '4':
 				break;
 			}
-			
 			system("Pause");
 			break;
 		case '5':
