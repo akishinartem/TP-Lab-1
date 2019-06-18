@@ -1,5 +1,4 @@
 #include "Chis.h"
-
 using namespace std;
 
 Chis::Chis() {
@@ -22,6 +21,7 @@ int Chis::GetX() {
 void Chis::SetX(int usrVal) {
 	x = new int;
 	*x = usrVal;
+	cout << "Класс успешно добавлен!" << endl;
 }
 
 void Chis::Print() {
