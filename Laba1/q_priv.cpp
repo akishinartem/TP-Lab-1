@@ -12,7 +12,7 @@ void q_priv::calc() {
 		temp = temp->Prev;
 	}
 	sum = sum_A / get_k();
-	cout << "Среднее арифметическое = [" << sum << "]\n";
+	cout << "\nСреднее арифметическое = [" << sum << "]\n";
 }
 
 void q_priv::print() {
