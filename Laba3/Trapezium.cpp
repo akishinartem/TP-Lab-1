@@ -3,12 +3,12 @@
 Trapezium::Trapezium() {
 	ifstream in("Trapezium.txt");
 	int c;
-	cout << "\nВыбрать откуда будет считывание данных: " << endl;
+	cout << "\nРежим ввода данных: " << endl;
 	cout << "[1] С клавиатуры." << endl;
 	cout << "[2] Из файла." << endl;
 	cout << ">>";
 	cin >> c;
-	system("cls");
+	cout << "\n";
 	if (c == 2) {
 		if (!in || FileCheck(in)) {
 			cout << "Файл пуст или не существует." << endl;
@@ -18,12 +18,11 @@ Trapezium::Trapezium() {
 		else {
 			in >> a >> b >> h;
 			cout << "Загруженные данные:" << endl;
-			cout << "Длина оснований: [" << a << "], [" << b << "].\n";
-			cout << "Высота: [" << h << "]." << endl;
+			cout << "Длины оснований: a = " << a << "; b = " << b << "." << endl;
+			cout << "Высота: h = " << h << "." << endl;
 		}
 	}
 	if (c == 1) {
-		system("cls");
 		cout << "Введите длины оснований:" << endl;
 		cout << "a = ";
 		cin >> a;
@@ -43,6 +42,6 @@ Trapezium::~Trapezium() {
 
 double Trapezium::Calc() {
 	S = h * ((a + b) / 2.0);
-	cout << "Результат:\nS = ";
+	cout << "\nРезультат:\nS = ";
 	return S;
 }
