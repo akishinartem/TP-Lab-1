@@ -10,5 +10,5 @@ class Square : public Area {
 public:
 	Square();
 	~Square();
-	double Calc() override;
+	double Calc();
 };
