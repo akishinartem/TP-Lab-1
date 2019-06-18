@@ -10,7 +10,7 @@ q_A::q_A() {
 
 q_A::~q_A() {
 	elem *temp = b;
-	while (temp != nullptr) {
+	while (temp) {
 		temp = b->Prev;
 		delete b;
 		b = temp;
@@ -18,8 +18,7 @@ q_A::~q_A() {
 }
 
 void q_A::del() {
-	if (!k)
-	{
+	if (!k) {
 		cout << "PUSTO" << endl;
 		return;
 	}
@@ -28,8 +27,7 @@ void q_A::del() {
 		a = nullptr;
 		b = nullptr;
 	}
-	else 
-	{
+	else {
 		elem *temp = b;
 		while (temp->Prev != a) {
 			temp = temp->Prev;
@@ -58,8 +56,7 @@ void q_A::add(int user_value) {
 }
 
 void q_A::print_queue() {
-	if (!k)
-	{
+	if (!k) {
 		cout << "Очередь пуста!" << endl;
 		return;
 	}
@@ -87,6 +84,7 @@ int q_A::calc() {
 	}
 	sum = sum_A / get_k();
 	cout << "\nСреднее арифметическое = [" << sum << "]\n";
+	return 0;
 }
 
 void q_A::copy_queue(q_A &op1) {
@@ -139,6 +137,10 @@ elem *q_A::get_b() {
 
 int q_A::get_k() {
 	return k;
+}
+
+void q_A::set_k(int num) {
+	k = num;
 }
 
 void q_A::set_a(elem *Val) {
