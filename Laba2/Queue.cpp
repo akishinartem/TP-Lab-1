@@ -79,7 +79,7 @@ void Queue::Del() {
 
 void Queue::Print() {
 	if (!k) {
-		cout << "Очередь пуста!";
+		cout << "Очередь пуста!" << endl;
 		return;
 	}
 	elem *temp = GetTail();
@@ -113,7 +113,7 @@ Queue& Queue::operator++() {
 
 Queue& Queue::operator--(int) {
 	if (this->GetK() < 2) {
-		cout << "Ошибка!";
+		cout << "Ошибка!" << endl;
 		return *this;
 	}
 	else if (this->GetK() == 2) {
