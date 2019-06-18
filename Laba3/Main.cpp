@@ -18,6 +18,7 @@ int main() {
 		cout << "[3] Треугольник (прямоугольный)." << endl;
 		cout << "[4] Трапеция." << endl;
 		cout << "[5] Выход." << endl;
+		cout << ">> ";
 		cin >> menu;
 		switch (menu) {
 		case '1': {
