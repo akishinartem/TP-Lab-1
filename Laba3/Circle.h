@@ -2,7 +2,6 @@
 #define _USE_MATH_DEFINES
 #include "Area.h"
 #include <iostream>
-#include <math.h>
 
 using namespace std;
 
