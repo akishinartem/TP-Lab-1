@@ -12,5 +12,5 @@ class Trapezium : public Area {
 public:
 	Trapezium();
 	~Trapezium();
-	double Calc() override;
+	double Calc();
 };
