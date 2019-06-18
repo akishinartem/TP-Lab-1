@@ -17,6 +17,7 @@ public:
 	elem *get_a();
 	elem *get_b();
 	int get_k();
+	void set_k(int num);
 	void set_a(elem *value);
 	void set_b(elem *value);
 };
