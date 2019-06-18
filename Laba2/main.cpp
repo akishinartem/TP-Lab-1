@@ -46,9 +46,11 @@ int main() {
 				switch (subsubChoise) {
 				case '1':
 					++(q);
+					cout << "Элемент добавлен!" << endl;
 					break;
 				case '2':
 					(q)++;
+					cout << "2 элемента добавлено!" << endl;
 					break;
 				case '3':
 					break;
@@ -63,9 +65,11 @@ int main() {
 				switch (subsubChoise) {
 				case '1':
 					(q)--;
+					cout << "2 элемента успешно удалено!" << endl;
 					break;
 				case '2':
 					--(q);
+					cout << "Элемент успешно удален!" << endl;
 					break;
 				case '3':
 					break;
@@ -75,12 +79,10 @@ int main() {
 				q.Print();
 				break;
 			case '4':
-				if (!(q)) {
+				if (!(q))
 					cout << "Очередь пуста!" << endl;
-				}
-				else {
+				else
 					cout << "Текущая очередь содержит элементы!" << endl;
-				}
 				break;
 			case '5':
 				break;
@@ -109,13 +111,11 @@ int main() {
 					cout << "Введите элемент:\n>> ";
 					cin >> usrVal;
 					a.SetX(usrVal);
-					cout << "\n";
 					break;
 				case '2':
 					cout << "Введите элемент:\n>> ";
 					cin >> usrVal;
 					b.SetX(usrVal);
-					cout << "\n";
 					break;
 				case '3':
 					break;
@@ -237,17 +237,17 @@ int main() {
 					}
 					break;
 				case '4':
-					if (a == b) {
-						cout << "Результат:\nКласс A равен классу B" << endl;
+					if (a != b) {
+						cout << "Результат:\nКласс A неравен классу B" << endl;
 						a.Print();
-						cout << " == ";
+						cout << " != ";
 						b.Print();
 						cout << "\n";
 					}
 					else {
-						cout << "Результат:\nКласс A неравен классу B" << endl;
+						cout << "Результат:\nКласс A равен классу B" << endl;
 						a.Print();
-						cout << " != ";
+						cout << " == ";
 						b.Print();
 						cout << "\n";
 					}
