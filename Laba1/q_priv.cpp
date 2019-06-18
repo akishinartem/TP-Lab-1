@@ -15,6 +15,29 @@ void q_priv::calc() {
 	cout << "Среднее арифметическое = [" << sum << "]\n";
 }
 
+void q_priv::print() {
+	if (!get_k()) {
+		cout << "Очередь пуста!" << endl;
+		return;
+	}
+	elem *temp = get_b();
+	int *och = new int[get_k()];
+	int l = get_k() - 1;
+	for (int i = 0; i < get_k(); ++i) {
+		och[l--] = temp->Val;
+		temp = temp->Prev;
+	}
+	cout << "Текущая очередь:" << endl;
+	for (int i = 0; i < get_k(); ++i) {
+		cout << "[" << och[i] << "] ";
+	}
+	delete[] och;
+}
+
+void q_priv::new_k(int num) {
+	set_k(num);
+}
+
 void q_priv::new_a(elem*value) {
 	set_a(value);
 }
